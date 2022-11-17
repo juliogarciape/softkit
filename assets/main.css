@@ -1,0 +1,40 @@
+.slide{
+    background-image: url('../assets/background-slide.jpg');
+    background-color: rgba(0,0,0,.25);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top center;
+    background-blend-mode: overlay;
+    height: 90vh;
+}
+
+.slide-content{
+    padding: 0 2.5rem;
+}
+
+.glass{
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.slide-trabajador{
+    background-image: url('../assets/slide-trabajador.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    background-color: rgba(0,0,0,.4);
+    background-blend-mode: overlay;
+    height: 450px;
+}
+
+.sub-title{
+    border-radius: 0 20px 20px 0;
+}
+
+.bg-main{
+    background: #eaebf0;
+}
