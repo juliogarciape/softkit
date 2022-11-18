@@ -13,22 +13,45 @@
     require_once("../controller/index.php");
     
     $data = [
-        0 => [],
-        1 => [],
-        2 => [],
-        3 => [],
-        4 => [],
-        5 => [],
-        6 => [],
-        7 => [],
-        8 => []
+        0 => [
+            "date" => "9:30 am / 7-11-2022",
+            "size" => "250 kb"
+        ],
+        1 => [
+            "date" => "9:30 am / 11-11-2022",
+            "size" => "500 kb"
+        ],
+        2 => [
+            "date" => "9:30 am / 14-11-2022",
+            "size" => "750 kb"
+        ],
+        3 => [
+            "date" => "9:30 am / 18-11-2022",
+            "size" => "900 kb"
+        ],
+        4 => [
+            "date" => "9:30 am / 21-11-2022",
+            "size" => "1024 kb"
+        ],
+        5 => [
+            "date" => "9:30 am / 25-11-2022",
+            "size" => "1.1 mb"
+        ],
+        6 => [
+            "date" => "9:30 am / 28-11-2022",
+            "size" => "1.1 mb"
+        ],
+        7 => [
+            "date" => "9:30 am / 02-12-2022",
+            "size" => "1.2 mb"
+        ]
     ]
 
 ?>
 
 <div class="container-fluid mt-5 d-flex justify-content-center">
     <a class="btn btn-primary w-50 btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal" href="?nuevo=registro" role="button">
-        Generar Backup 
+        Generar copia de seguridad 
         <i class="bi bi-gear-wide-connected"></i>
     </a>
 </div>
@@ -36,38 +59,36 @@
 <div class="container-fluid mb-5 mt-5">
     <div class="row">
 
-    <?php foreach($data as $item){ ?>
+    <?php foreach($data as $item): ?>
     
     <div class="col-3 mb-4">
         <div class="card shadow-sm border-1 border-light rounded-3">
-            <div class="card-header text-center fs-6 bg-dark text-white fw-bold">
-                Fecha de origen: 12-11-2022
+            <div class="card-header text-center fs-6 bg-warning fw-bold">
+                <?= $item['date']; ?>
             </div>
-            <div class="card-body d-flex justify-content-center">
-                <div class="fs-1">
+            <div class="card-body d-flex justify-content-center gap-3">
+                <div class="d-flex align-items-center" style="font-size: 4rem;">
                     <i class="bi bi-file-earmark-zip-fill"></i>
                 </div>
                 <ul class="card-text mb-0 ms-3 ps-0" style="list-style: none;">
                     <li class="fw-bold">Generado por:</li>
-                    <li>Renato Guierrez</li>
-                    <li class="fw-bold"></li>
-                    <li></li>
+                    <li class="mb-2">Renato Guierrez</li>
                     <li class="fw-bold">Tamaño:</li>
-                    <li>200 kb</li>
+                    <li><?= $item['size']; ?></li>
                 </ul>
             </div>
-            <div class="card-footer d-flex justify-content-between">
-                <button class="btn btn-outline-danger">
+            <div class="card-footer d-flex justify-content-between gap-3">
+                <button class="btn w-100 btn-outline-danger">
                     Eliminar
                 </button>
-                <button class="btn btn-warning">
+                <button class="btn w-100 btn-outline-primary">
                     Descargar
                 </button>
             </div>
         </div>
     </div>
 
-    <?php } ?>
+    <?php endforeach; ?>
 
     </div>
 </div>

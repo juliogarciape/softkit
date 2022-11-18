@@ -9,7 +9,7 @@
                 else if($_SESSION['rol'] == 1) echo "(Trabajador del Almacen)";
                 echo '</span>';
             }else{
-                echo '<span class="d-block fs-6 fw-normal link-dark">(Sistema de Fundacion Calma)</span>';
+                echo '<span class="d-block fs-6 fw-normal link-dark">(Sistema de Control de Almacen)</span>';
             }
             ?>
         </a>
@@ -22,10 +22,19 @@
     </nav>
     <?php if(isset($_SESSION['login']) && $_SESSION['login']){ ?>
     <div class="w-100 bg-dark navbar px-4">
+    <?php
+    $url= $_SERVER["REQUEST_URI"];
+    if (strpos($url, 'dashboard') !== false) { ?>
         <a class="link-light text-decoration-none" href="/softkit/pages/">
             <i class="bi bi-house-door"></i>
             Inicio
         </a>
+    <?php }else{ ?>
+        <a class="link-light text-decoration-none" href="/softkit/pages/">
+            <i class="bi bi-arrow-counterclockwise"></i>
+            Regresar
+        </a>
+    <?php } ?>
         <a class="link-light text-decoration-none" href="/softkit/controller/index.php?logout=true">
             Cerrar Sesión
             <i class="bi bi-box-arrow-right"></i>

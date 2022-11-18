@@ -18,34 +18,41 @@
 
 ?>
 
-<div class="container mt-5">
-<div class="card shadow-sm">
+<div class="w-75 m-auto mt-5">
+<div class="card shadow-sm rounded-3">
     <div class="card-header text-center p-3 text-white bg-dark">
-        <h4 class="card-title mb-0"><i class="bi bi-basket-fill"></i> <?php echo $amount; ?> productos actualmente en almacén</h4>
+        <h5 class="card-title mb-0">
+            <i class="bi bi-house-heart-fill"></i>
+            <?php echo $amount; ?> productos actualmente en almacén
+        </h5>
     </div>
-    <div class="card-body text-center">
-        <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" href="?nuevo=registro" role="button">
-            Generar Distribución 
-            <i class="bi bi-gear-wide-connected"></i>
-        </a>
-        <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModalDel">
-            Eliminar propuestas 
-            <i class="bi bi-trash3"></i>
-        </a>
+    <div class="card-body d-flex p-3">
+        <div class="w-100 d-flex justify-content-center">
+            <a class="btn btn-primary w-75" data-bs-toggle="modal" data-bs-target="#exampleModal" href="?nuevo=registro" role="button">
+                Generar Nueva Distribución 
+                <i class="bi bi-gear-wide-connected"></i>
+            </a>
+        </div>
+        <div class="w-100 d-flex justify-content-center">
+            <a class="btn btn-danger w-75" data-bs-toggle="modal" data-bs-target="#exampleModalDel">
+                Eliminar Todas las Propuestas
+                <i class="bi bi-trash3"></i>
+            </a>
+        </div>
     </div>
 </div>
 </div>
 
 <div class="container-fluid mt-5 mb-5">
 
-<div style="width: max-content;" class="p-2 px-4 text-center bg-warning rounded-3">
-    <h5><i class="bi bi-robot"></i> Propuestas de distribución generadas</h5>
+<div style="width: max-content;" class="p-3 shadow-sm sub-title px-4 text-center bg-warning">
+    <h5 class="mb-0"><i class="bi bi-robot"></i> Propuestas de distribución generadas</h5>
 </div>
 
 <table id="table_id" class="display table mt-4 mb-4 table-bordered">
     <thead class="table-dark text-center">
         <tr class="text-center align-middle">
-            <th>ID Propuesta</th>
+            <th>ID</th>
             <th>Originado por</th>
             <th>Productos X Kits</th>
             <th>Valor del Kit (S/)</th>
@@ -61,9 +68,11 @@
                 <td><?php echo $value['productos']; ?></td>
                 <td>S/. <?php echo $value['total']; ?></td>
                 <td><?php echo $value['fechaCreacion']; ?></td>
-                <td class="d-flex justify-content-center gap-2">
-                    <button type="button" onClick="verDetalles(<?php echo $value['id']; ?>)" class="btn btn-primary btn-sm">Ver detalles</button>
-                    <a data-id="<?php echo $value['id']; ?>" class="btn btn-warning btn-sm" id="buttonProcess" data-bs-toggle="modal" data-bs-target="#processModal">Autorizar <i class="bi bi-check2-square"></i></a>
+                <td class="d-flex justify-content-center gap-3">
+                    
+                    <button type="button" onClick="verDetalles(<?php echo $value['id']; ?>)" class="btn btn-primary btn-sm">Ver detalles <i class="bi bi-eye"></i></button>
+                    
+                    <a data-id="<?php echo $value['id']; ?>" class="btn btn-warning btn-sm" id="buttonProcess" data-bs-toggle="modal" data-bs-target="#processModal">Autorizar <i class="bi bi-check-square"></i></a>
                 </td>
             </tr>
         <?php } ?>
@@ -71,8 +80,8 @@
 </table>
 
 
-<div style="width: max-content;" class="p-2 px-4 text-center bg-warning rounded-3">
-    <h5><i class="bi bi-bag-check-fill"></i> Historial de propuestas procesadas</h5>
+<div style="width: max-content;" class="p-3 shadow-sm sub-title px-4 text-center bg-warning">
+    <h5 class="mb-0"><i class="bi bi-bag-check-fill"></i> Historial de propuestas autorizadas</h5>
 </div>
 
 <table id="table_id" class="display table mt-4 table-bordered">
@@ -80,8 +89,8 @@
         <tr class="text-center align-middle">
             <th>ID</th>
             <th>Originado por</th>
-            <th>Productos</th>
-            <th>Total</th>
+            <th>Productos X Kits</th>
+            <th>Valor del Kit (S/)</th>
             <th>Fecha de Creación</th>
             <th>Acción</th>
         </tr>
@@ -94,9 +103,11 @@
                 <td><?php echo $value['productos']; ?></td>
                 <td>S/. <?php echo $value['total']; ?></td>
                 <td><?php echo $value['fechaCreacion']; ?></td>
-                <td class="d-flex justify-content-center gap-4">
-                    <button type="button" onClick="verDetalles(<?php echo $value['id']; ?>)" class="btn btn-primary btn-sm">Ver detalles</button>
-                    <button class="btn btn-secondary btn-sm">Generar informe</button>
+                <td class="d-flex justify-content-center gap-3">
+
+                    <button type="button" onClick="verDetalles(<?php echo $value['id']; ?>)" class="btn btn-primary btn-sm">Ver detalles <i class="bi bi-eye"></i></button>
+                    
+                    <button class="btn btn-secondary btn-sm">Generar Informe </button>
                 </td>
             </tr>
         <?php } ?>

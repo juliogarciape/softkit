@@ -16,21 +16,23 @@
 
 
 <div class="container mb-5 mt-5">
-    <div class="row mb-3">
+    <div class="row mb-4">
     <div class="col-4">
         <div class="card shadow-sm border-1 border-light rounded-3">
-            <div class="card-header fs-6 bg-warning fw-bold">
-                <i class="bi bi-box-seam-fill"></i>    
-                Almacen de productos
+            <div class="card-header text-center fs-6 bg-warning fw-bold">
+                Almacen De Productos
             </div>
             <div class="card-body">
                 <p class="card-text">
-                    Toda la información sobre los productos registrados en el almacén puede ser vista desde aquí o puede ser exportada para formato CSV 
+                    Toda información registrada en el almacén puede ser vista desde aquí o puede ser exportada en formato CSV 
                 </p>
+                <div class="text-center text-secondary" style="font-size: 3.5rem;">
+                    <i class="bi bi-box-seam-fill"></i>    
+                </div>
             </div>
             <div class="card-footer text-center">
-                <a class="btn btn-dark w-100" href="/softkit/pages/almacen.php" role="button">
-                    Ir a Almacen Productos
+                <a class="btn btn-primary w-100" href="/softkit/pages/almacen.php" role="button">
+                    Visitar Almacen
                     <i class="bi bi-box-arrow-up-right"></i>
                 </a>
             </div>
@@ -38,25 +40,27 @@
     </div>
     <div class="col-4">
         <div class="card shadow-sm border-1 border-light rounded-3">
-            <div class="card-header fs-6 bg-warning fw-bold">
-                <i class="bi bi-basket3-fill"></i>
-                Distribucion de productos
+            <div class="card-header text-center fs-6 bg-warning fw-bold">
+                Distribucion De Productos
             </div>
             <div class="card-body">
                 <p class="card-text">
-                   Dependiendo de las necesidaes El sistema dependiendo de las  mediante un algoritmo genera propuestas de distribucion de los productos para el armado de kits alimenticios 
+                    Según los productos registrados, el sistema genera propuestas de distribucion para el armado de los kits 
                 </p>
+                <div class="text-center text-secondary" style="font-size: 3.5rem;">
+                    <i class="bi bi-basket3-fill"></i>
+                </div>
             </div>
             <div class="card-footer text-center">
                 <?php
                 if($_SESSION['rol'] == 2){ ?>
-                    <a class="btn btn-dark w-100" href="/softkit/pages/distribucion.php" role="button">
-                    Ir a Distribucion Productos
+                    <a class="btn btn-primary w-100" href="/softkit/pages/distribucion.php" role="button">
+                    Visitar Distribucion
                     <i class="bi bi-box-arrow-up-right"></i>
                     </a>
                 <?php }else{ ?>
-                    <button disabled class="btn btn-dark w-100">
-                    Ir a Distribucion Productos
+                    <button disabled class="btn btn-primary w-100">
+                    Visitar Distribucion
                     <i class="bi bi-lock-fill"></i>
                     </button>
                 <?php } ?>
@@ -65,25 +69,27 @@
     </div>
     <div class="col-4">
         <div class="card shadow-sm border-1 border-light rounded-3">
-            <div class="card-header fs-6 bg-warning fw-bold">
-                <i class="bi bi-bar-chart-line-fill"></i>
-                Analisis de los datos guardados
+            <div class="card-header text-center fs-6 bg-warning fw-bold">
+                Analisis De Datos 
             </div>
             <div class="card-body">
                 <p class="card-text">
-                    El sistema genera un analisis de los datos guardados y elabora informes para enviar mediante email al correo de gerencia
+                    El sistema elabora analisis de los datos guardados y genera informes para enviar por correo o para descargar
                 </p>
+                <div class="text-center text-secondary" style="font-size: 3.5rem;">
+                    <i class="bi bi-bar-chart-line-fill"></i>
+                </div>
             </div>
             <div class="card-footer text-center">
                 <?php
                 if($_SESSION['rol'] == 2){ ?>
-                    <a class="btn btn-dark w-100" href="/softkit/pages/analisis.php" role="button">
-                    Ir a Analisis Datos
+                    <a class="btn btn-primary w-100" href="/softkit/pages/analisis.php" role="button">
+                    Visitar Analisis
                     <i class="bi bi-box-arrow-up-right"></i>
                     </a>
                 <?php }else{ ?>
-                    <button disabled class="btn btn-dark w-100">
-                    Ir a Analisis Datos
+                    <button disabled class="btn btn-primary w-100">
+                    Visitar Analisis
                     <i class="bi bi-lock-fill"></i>
                     </button>
                 <?php } ?>
@@ -94,18 +100,20 @@
     <div class="row">
     <div class="col-4">
         <div class="card shadow-sm border-1 border-light rounded-3">
-            <div class="card-header fs-6 bg-warning fw-bold">
-                <i class="bi bi-clipboard2-plus-fill"></i>    
-                Registro de nuevos productos
+            <div class="card-header text-center fs-6 bg-warning fw-bold">
+                Registro De Productos
             </div>
             <div class="card-body">
                 <p class="card-text">
-                    Cada ingreso de nuevos productos al almacén fisico debe ser registrado inmediatamente en la base de datos del sistema
+                    Todo nuevo ingreso de productos al almacén fisico debe ser registrado seguidamente en el sistema
                 </p>
+                <div style="font-size: 3.5rem;" class="text-center text-secondary">
+                    <i class="bi bi-clipboard2-plus-fill"></i>
+                </div>
             </div>
             <div class="card-footer text-center">
-                <a class="btn btn-dark w-100" href="/softkit/pages/almacen.php?nuevo=registro" role="button">
-                    Ir a Nuevo Registro
+                <a class="btn btn-primary w-100" href="/softkit/pages/nuevo.php" role="button">
+                    Visitar Registro
                     <i class="bi bi-box-arrow-up-right"></i>
                 </a>
             </div>
@@ -113,27 +121,27 @@
     </div>
     <div class="col-4">
         <div class="card shadow-sm border-1 border-light rounded-3">
-            <div class="card-header fs-6 bg-warning fw-bold">
-                <i class="bi bi-server"></i>
-                Copias de la base de datos
+            <div class="card-header text-center fs-6 bg-warning fw-bold">
+                Copias De Seguridad
             </div>
             <div class="card-body">
                 <p class="card-text">
-                    Una vez terminado los registros de los productos, el lider genera 
-                    
-                    el sistema genera y almacena una copia de seguridad (backup) de la base de datos
+                    Finalizado el registro de los datos, el sistema crea y almacena copias de seguridad de la base de datos  
                 </p>
+                <div class="text-center text-secondary" style="font-size: 3.5rem;">
+                    <i class="bi bi-server"></i>
+                </div>
             </div>
             <div class="card-footer text-center">
             <?php
             if($_SESSION['rol'] == 2){ ?>
-                <a class="btn btn-dark w-100" href="/softkit/pages/backup.php" role="button">
-                    Ir a Registro Backup
+                <a class="btn btn-primary w-100" href="/softkit/pages/backup.php" role="button">
+                    Visitar Backup
                     <i class="bi bi-box-arrow-up-right"></i>
                 </a>
             <?php }else{ ?>
-                <button disabled class="btn btn-dark w-100">
-                    Ir a Registro Backup
+                <button disabled class="btn btn-primary w-100">
+                    Visitar Backup
                     <i class="bi bi-lock-fill"></i>
                 </button>
             <?php } ?>
@@ -142,25 +150,27 @@
     </div>
     <div class="col-4">
         <div class="card shadow-sm border-1 border-light rounded-3">
-            <div class="card-header fs-6 bg-warning fw-bold">
-                <i class="bi bi-person-fill"></i>
-                Administrar trabajadores
+            <div class="card-header text-center fs-6 bg-warning fw-bold">
+                Administrar Trabajadores
             </div>
             <div class="card-body">
                 <p class="card-text">
-                    La Fundación Calma se encuentra en crecimiento por lo que administrar el registro de nuestros trabajadores ayudará en la distribución de tareas
+                    Administrar el registro de nuestros trabajadores ayudará en la distribución de sus asignaciones
                 </p>
+                <div class="text-center text-secondary" style="font-size: 3.5rem;">
+                    <i class="bi bi-person-fill"></i>
+                </div>
             </div>
             <div class="card-footer text-center">
             <?php
                 if($_SESSION['rol'] == 2){ ?>
-                <a class="btn btn-dark w-100" href="/softkit/pages/trabajadores.php" role="button">
-                    Ir a Trabajadores
+                <a class="btn btn-primary w-100" href="/softkit/pages/trabajadores.php" role="button">
+                    Visitar Trabajadores
                     <i class="bi bi-box-arrow-up-right"></i>
                 </a>
             <?php }else{ ?>
-                <button disabled class="btn btn-dark w-100">
-                    Ir a Trabajadores
+                <button disabled class="btn btn-primary w-100">
+                    Visitar Trabajadores
                     <i class="bi bi-lock-fill"></i>
                 </button>
             <?php } ?>

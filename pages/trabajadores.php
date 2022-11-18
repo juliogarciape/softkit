@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-PE">
 <head>
     <?php require("../partials/head.php"); ?>
 </head>
@@ -120,7 +120,7 @@
 </div>
 
 
-<div class="container-fluid mt-4 mb-5">
+<div class="container-fluid mt-5 mb-5">
 
 <div style="width: max-content;" class="p-3 shadow-sm sub-title px-4 text-center bg-warning">
     <h5 class="mb-0"><i class="bi bi-person-fill"></i> Administración de Trabajadores</h5>
@@ -129,7 +129,7 @@
 <table id="table_ids" class="mt-4 bg-white display table pt-4 table-bordered">
     <thead class="table-dark text-center mx-auto">
         <tr>
-            <th>ID Usuario</th>
+            <th>ID</th>
             <th>Nombres</th>
             <th>Apellidos</th>
             <th>Correo Electrónico</th>
@@ -232,15 +232,11 @@
 
 /*
 
-
 Swal.fire(
     'Registro Exitoso',
     'Julio Garcia fue agregado como nuevo trabajador',
     'success'
 )
-
-
-
 
 
 $('#table_ids').DataTable({

@@ -4,8 +4,6 @@
 <html lang="es-PE">
 <head>
     <?php require("../partials/head.php"); ?>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
 </head>
 <body class="bg-main">
 
@@ -15,24 +13,45 @@
     require_once("../controller/index.php");
     
     $data = listAllProducts();
+    $amount = getAmountProducts();
 
 ?>
 
-<div class="container-fluid mt-5 d-flex justify-content-between">
-    <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" href="?nuevo=registro" role="button">Nuevo Registro <i class="bi bi-plus"></i></a>
-    <button style="display:none;" id="btnNew" data-bs-toggle="modal" data-bs-target="#exampleModal"></button>
-    <button type="button" class="btn btn-warning">Exportar Datos (.csv) <i class="bi bi-file-earmark-spreadsheet-fill"></i></button>
+<div class="w-75 m-auto mt-5">
+<div class="card shadow-sm rounded-3">
+    <div class="card-header text-center p-3 text-white bg-dark">
+        <h5 class="card-title mb-0">
+            <i class="bi bi-house-heart-fill"></i>
+            <?php echo $amount; ?> productos actualmente en almacén
+        </h5>
+    </div>
+    <div class="card-body d-flex p-3">
+        <div class="w-100 d-flex justify-content-center">
+            <a class="btn btn-primary w-75 text-white" href="/softkit/pages/nuevo.php">
+                Nuevo Registro 
+                <i class="bi bi-plus-square"></i>
+            </a>
+        </div>
+        <div class="w-100 d-flex justify-content-center">
+            <button class="btn btn-warning w-75">
+                Exportar Datos (CSV) 
+                <i class="bi bi-file-earmark-ruled-fill"></i>
+            </button>
+        </div>
+    </div>
 </div>
+</div>
+
 
 <div class="container-fluid mt-5 mb-5">
 <table id="table_id" class="display table pt-4 table-bordered">
     <thead class="table-dark text-center mx-auto">
         <tr>
-            <th class="text-center">ID Producto</th>
-            <th class="text-center">Descripción</th>
-            <th class="text-center">Precio de Compra</th>
-            <th class="text-center">Stock Total</th>
-            <th class="text-center">Fecha Ingreso</th>
+            <th class="text-center">ID</th>
+            <th class="text-center">Descripción del Producto</th>
+            <th class="text-center">Precio Unitario (S/)</th>
+            <th class="text-center">Stock (Unidades)</th>
+            <th class="text-center">Fecha de Ingreso</th>
             <th class="text-center">Acción</th>
         </tr>
     </thead>
@@ -126,14 +145,6 @@
 <script>
 
 $(document).ready( function () {
-
-    const urlParams = new URLSearchParams(window.location.search);
-    var producto = urlParams.get('nuevo');
-
-    if (producto == 'registro'){
-        $("#btnNew").click();
-    }
-
     $('#table_id').DataTable({
         language: {
         "decimal": "",
@@ -153,10 +164,8 @@ $(document).ready( function () {
             "next": "Siguiente",
             "previous": "Anterior"
         }
-    },
+        },
     });
-
-
 } );
 
 </script>

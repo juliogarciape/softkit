@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-PE">
 <head>
     <?php require("../partials/head.php"); ?>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
@@ -29,7 +29,7 @@
     </div>
 </div>
 
-// validación de graficos - Agregar email automatico y envio rapido a gerencia y 
+// graficos - Agregar email automatico y envio rapido a gerencia y exxportar
 
 
 
