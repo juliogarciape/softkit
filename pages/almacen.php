@@ -48,20 +48,24 @@
     <thead class="table-dark text-center mx-auto">
         <tr>
             <th class="text-center">ID</th>
-            <th class="text-center">Descripción del Producto</th>
-            <th class="text-center">Precio Unitario (S/)</th>
-            <th class="text-center">Stock (Unidades)</th>
-            <th class="text-center">Fecha de Ingreso</th>
+            <th class="text-center">Producto</th>
+            <th class="text-center">Precio Unitario</th>
+            <th class="text-center">Stock</th>
+            <th class="text-center">Marca</th>
+            <th class="text-center">Peso</th>
+            <th class="text-center">Fecha Ingreso</th>
             <th class="text-center">Acción</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="bg-white">
         <?php foreach ($data as $value) { ?>
             <tr class="text-center align-middle">
                 <td><?php echo $value['id']; ?></td>
                 <td><?php echo $value['descripcion']; ?></td>
                 <td>S/. <?php echo $value['precioUnitario']; ?></td>
                 <td><?php echo $value['stock']; ?></td>
+                <td><?php echo $value['marca']; ?></td>
+                <td><?php echo $value['peso']." Kg"; ?></td>
                 <td><?php echo $value['fechaIngreso']; ?></td>
                 <td class="d-flex justify-content-center gap-3">
                     <a href="?id=<?php echo $value['id_producto']; ?>" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar <i class="bi bi-pencil-square"></i></a>

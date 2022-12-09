@@ -41,6 +41,14 @@
             <input type="number" class="form-control" id="" required>
         </div>
         <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Marca:</label>
+            <input type="number" class="form-control" id="" required>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Peso (Kg):</label>
+            <input type="number" class="form-control" id="" required>
+        </div>
+        <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Stock (Unidades):</label>
             <input type="number" class="form-control" id="" required>
         </div>

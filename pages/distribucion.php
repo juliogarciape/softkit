@@ -23,7 +23,7 @@
     <div class="card-header text-center p-3 text-white bg-dark">
         <h5 class="card-title mb-0">
             <i class="bi bi-house-heart-fill"></i>
-            <?php echo $amount; ?> productos actualmente en almacén
+            10 datos actualmente en 
         </h5>
     </div>
     <div class="card-body d-flex p-3">
